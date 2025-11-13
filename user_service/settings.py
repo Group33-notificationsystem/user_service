@@ -71,7 +71,7 @@ WSGI_APPLICATION = 'user_service.wsgi.application'
 
 # Database
 DATABASES = {
-    "default": dj_database_url.parse(os.environ.get("postgresql://postgres:GwPBXTIwaWXQKNhaJwkHRsqtSQiSpCBx@yamabiko.proxy.rlwy.net:30527/railway"))
+    "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 # Redis Cache
