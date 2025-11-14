@@ -11,7 +11,7 @@ class UserPreferenceSerializer(serializers.ModelSerializer):
 
 class UserCreateSerializer(serializers.ModelSerializer):
     preferences = UserPreferenceSerializer()
-    password = serializers.CharField(write_only=True, min_length=8)
+    password = serializers.CharField(write_only=True, min_length=8, required=False)
     
     class Meta:
         model = User
