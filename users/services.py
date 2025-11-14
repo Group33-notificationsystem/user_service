@@ -15,16 +15,14 @@ class UserCacheService:
         try:
             user = User.objects.select_related('preference').get(id=user_id)
             user_data = {
-                'user_id': str(user.id),  # ← Changed from 'id' to 'user_id'
+                'id': str(user.id),
                 'email': user.email,
                 'name': user.name,
-                'push_token': user.push_token,  # ← This is correct
+                'push_token': user.push_token,
                 'preferences': {
                     'email': user.preference.email,
                     'push': user.preference.push
-                },
-                'created_at': user.created_at.isoformat() if user.created_at else None,  # ← Add timestamp
-                'updated_at': user.updated_at.isoformat() if user.updated_at else None   # ← Add timestamp
+                }
             }
             
             cache.set(cache_key, json.dumps(user_data), 300)
