@@ -85,7 +85,7 @@ DATABASES = {
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': config('REDIS_URL', default='redis://default:uFZbxXRbpDbHSpbYhZUPymisvMGEXjEp@redis.railway.internal:6379'),
+        'LOCATION': config('REDIS_URL', default='redis://default:uFZbxXRbpDbHSpbYhZUPymisvMGEXjEp@crossover.proxy.rlwy.net:11433'),
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
         },
