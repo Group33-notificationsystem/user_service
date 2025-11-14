@@ -10,7 +10,7 @@ class UserPreferenceSerializer(serializers.ModelSerializer):
         fields = ['email', 'push']
 
 class UserCreateSerializer(serializers.ModelSerializer):
-    preferences = UserPreferenceSerializer()
+    preferences = UserPreferenceSerializer(required=False)
     password = serializers.CharField(write_only=True, min_length=8, required=False)
     
     class Meta:
