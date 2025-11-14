@@ -11,5 +11,7 @@ requests==2.31.0
 django-filter==23.3
 setuptools>=68.0.0
 dj_database_url
+gunicorn
+
 
 
